@@ -50,7 +50,7 @@ Get-Alias np, ct | Export-Clixml -Path .\alias-backup.xml
 ## 4. Smazání obou aliasů
 
 ```powershell
-Remove-Item -Path Alias:np, Alias:ct
+Remove-Alias -Name np, ct
 ```
 
 Ověření, že aliasy skutečně zmizely:
@@ -83,7 +83,7 @@ Get-Alias np, ct
 ## 6. Smazání aliasů podruhé
 
 ```powershell
-Remove-Item -Path Alias:np, Alias:ct
+Remove-Alias -Name np, ct
 ```
 
 ---
@@ -133,7 +133,7 @@ Get-Alias np, ct |
 Get-Alias np, ct | Export-Clixml -Path .\alias-backup.xml
 
 # 4. Smazání aliasů
-Remove-Item -Path Alias:np, Alias:ct
+Remove-Alias -Name np, ct
 Get-Alias np, ct -ErrorAction SilentlyContinue
 
 # 5. Obnova z JSON
@@ -144,7 +144,7 @@ foreach ($alias in $fromJson) {
 Get-Alias np, ct
 
 # 6. Smazání aliasů podruhé
-Remove-Item -Path Alias:np, Alias:ct
+Remove-Alias -Name np, ct
 
 # 7. Obnova z XML
 $fromXml = Import-Clixml -Path .\alias-backup.xml
